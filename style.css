@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2D2C2D;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lora', sans-serif;
+}
+
+.flashcard {
+    padding: 10em 15em;
+    position: relative;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.face {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease;
+    
+}
+
+.face.front {
+    background-color: #D9D8DA;
+    cursor: pointer;
+    padding: 1em;
+}
+.face.back {
+    background-color: #A1224A;
+    padding: 1em;
+}
+.face.front .question,
+.face.back .answer {
+    font-size: 2.3rem;
+}
+
+.face.front .question {
+    color: #A1224A;
+}
+.face.back .answer {
+    color: #D9D8DA;
+}
+
+.is-flipped {
+    transform: rotateY(180deg);
+}
